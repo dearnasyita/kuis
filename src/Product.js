@@ -1,31 +1,26 @@
 import React from 'react';
-import './Product.css';
 import logo from './logo.svg';
-import './App.css';
 
 class Product extends React.Component {
     render() {
         return (
-
-                <div className="col m6 s6">
-                    <div className="card">
-                        <div className="card-image">
-                            <img src={logo} className="App-logo" alt="logo"/>
-                            <br></br>
-                            <span class="card-title activator grey-text"> {this.props.judul}</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                            
-                        <div className="card-content black-text">
-                            <p>{this.props.keterangan}</p>
-                        </div>
-                        <div className="card-action">
-                            <a href="#">Hapus</a>
-                        </div>
+            <div className="col m4 s6">
+                <div className="card">
+                    <div className="card-image">
+                        <img src={logo} className="App-logo" alt="logo"/>
+                        <br/><br/><br/><br/>
+                        <span className="card-title grey-text"><b>{this.props.judul}</b></span>
+                    </div>
+                    <div className="card-content">
+                        <p>{this.props.keterangan}</p>
+                    </div>
+                    <div className="card-action">
+                        <a onClick={this.props.hapusKartu} className="waves-effect waves-light red btn">Hapus
+                            <i className="material-icons left">delete</i>
+                        </a>
                     </div>
                 </div>
-
-
+            </div>
         );
     }
 }
